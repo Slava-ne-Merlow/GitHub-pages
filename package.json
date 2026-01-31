@@ -2,10 +2,12 @@
   "scripts": {
     "dev": "node esbuild.mjs --mode=dev",
     "build": "node esbuild.mjs --mode=build",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "node --test --import tsx"
   },
   "devDependencies": {
     "esbuild": "^0.24.0",
+    "tsx": "^4.19.0",
     "typescript": "^5.6.0"
   }
 }

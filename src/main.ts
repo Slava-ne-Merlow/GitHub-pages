@@ -13,13 +13,11 @@ if (!inp || !add || !list) {
 let counter: number = 0;
 let map: Map<number, string> = new Map<number, string>([]);
 
+import { deserializeMap, serializeMap } from "./storage";
+
 // --- Helpers ---
 function saveMap(m: Map<number, string>): void {
-    // ключи в localStorage будут строками
-    const obj = Object.fromEntries(
-        Array.from(m.entries(), ([k, v]) => [String(k), v])
-    );
-    localStorage.setItem("map", JSON.stringify(obj));
+    localStorage.setItem("map", serializeMap(m));
 }
 
 // --- Bootstrap ---
@@ -30,20 +28,7 @@ window.addEventListener("load", () => {
         if (!Number.isNaN(n)) counter = n;
     }
 
-    const raw = localStorage.getItem("map");
-    if (raw) {
-        try {
-            const obj = JSON.parse(raw) as Record<string, unknown>;
-            if (obj && typeof obj === "object") {
-                // конвертируем ключи обратно в числа, значения — в строки
-                map = new Map<number, string>(
-                    Object.entries(obj).map(([k, v]) => [Number(k), String(v)])
-                );
-            }
-        } catch {
-            // игнорируем битые данные
-        }
-    }
+    map = deserializeMap(localStorage.getItem("map"));
 
     renderMap(map);
 });
