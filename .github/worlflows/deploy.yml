@@ -1,0 +1,21 @@
+name: Example
+
+on:
+  push:
+    branches: [ main ]
+
+  permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+
+jobs:
+  deploy:
+    name: Test deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: download
+        uses: actions/checkout@v4
+      - name: deploy
+        uses: actions/deploy-pages@v4
