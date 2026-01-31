@@ -11,6 +11,12 @@ concurrency:
   group: 'pages'
   cancel-in-progress: true
 jobs:
+
+  greet:
+    uses: ./.github/actions/myaction.yml
+    with:
+      name: 'goida'
+
   build:
     runs-on: ubuntu-latest
     steps:
