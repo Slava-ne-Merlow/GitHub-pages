@@ -14,7 +14,6 @@ jobs:
 
   greet:
     uses: ./.github/actions/my-action.yml
-    with:
 
 
 
