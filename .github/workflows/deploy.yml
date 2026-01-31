@@ -12,13 +12,16 @@ concurrency:
   cancel-in-progress: true
 jobs:
 
+
   greet:
     runs-on: ubuntu-latest
     steps:
-      - name: aaa
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: greet
         uses: ./.github/actions/greed
         with:
-          name: 'Goida'
+          name: "Цирк Уродов"
 
 
 
