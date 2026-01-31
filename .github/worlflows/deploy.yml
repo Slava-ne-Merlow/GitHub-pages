@@ -33,7 +33,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     if: github.event_name == "workflow_dispatch"
-    url: ${{ steps.deployment.outputs.page_url }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: deploy
         uses: actions/deploy-pages@v4
