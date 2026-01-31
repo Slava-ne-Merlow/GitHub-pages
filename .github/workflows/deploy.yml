@@ -1,7 +1,7 @@
 name: example-2
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   workflow_dispatch:
 permissions:
   contents: read
@@ -13,9 +13,12 @@ concurrency:
 jobs:
 
   greet:
-    uses: ./.github/actions/greed
-    with:
-      name: 'Goida'
+    runs-on: ubuntu-latest
+    steps:
+      - name: aaa
+        uses: ./.github/actions/greed
+        with:
+          name: 'Goida'
 
 
 
