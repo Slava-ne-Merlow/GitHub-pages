@@ -13,7 +13,9 @@ concurrency:
 jobs:
 
   greet:
-    uses: ./.github/actions/my-action.yml
+    uses: ./.github/actions/greed
+    with:
+      name: 'Goida'
 
 
 
