@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "dev": "node esbuild.mjs --mode=dev",
+    "build": "node esbuild.mjs --mode=build",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "typescript": "^5.6.0"
+  }
+}

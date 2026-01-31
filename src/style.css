@@ -1,0 +1,125 @@
+body {
+    transform: scale(1.6);
+    font-family: "Montserrat Alternates", sans-serif;
+    background: #f3f4f6;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh
+}
+
+.page {
+    background: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    width: 320px
+}
+
+h1 {
+    font-size: 16px;
+    margin: 0 0 12px;
+}
+
+.row {
+    display: flex;
+    gap: 8px
+}
+
+input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px
+}
+
+button {
+    padding: 8px 10px;
+    border: 0;
+    border-radius: 6px;
+    background: #2b8aef;
+    color: #fff;
+    cursor: pointer
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0;
+    max-height: 50vh;
+    overflow: auto
+}
+
+li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    border-bottom: 1px solid #f0f0f0
+}
+
+.text {
+    flex: 1
+}
+
+.done {
+    text-decoration: line-through;
+    color: #888
+}
+
+.del {
+    background: transparent;
+    border: 0;
+    color: #e04b5a;
+    cursor: pointer
+}
+
+@font-face {
+    font-family: 'Mont';
+    src: url('../static/fonts/MontRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Mont';
+    src: url('../static/fonts/MontBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: url('../static/fonts/MontserratAlternatesBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nunito Sans-Bold';
+    src: url('../static/fonts/NunitoSansBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nunito Sans-Regular';
+    src: url('../static/fonts/NunitoSansRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nunito Sans-SemiBold';
+    src: url('../static/fonts/NunitoSansSemiBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Nunito Sans-ExtraBold';
+    src: url('../static/fonts/NunitoSansExtraBold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
