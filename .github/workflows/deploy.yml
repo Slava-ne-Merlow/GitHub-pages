@@ -33,7 +33,7 @@ jobs:
     if: github.event_name == 'workflow_dispatch'
     environment:
       name: github-pages
-      url: ${{ steps.deploynment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: deploy
         uses: actions/deploy-pages@v4
