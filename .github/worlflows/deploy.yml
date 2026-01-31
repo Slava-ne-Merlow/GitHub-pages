@@ -1,32 +1,39 @@
-name: Example
-
+name: example-2
 on:
   push:
-    branches: [ main ]
-
+    branches: [main]
 permissions:
   contents: read
   pages: write
   id-token: write
-
 jobs:
-  deploy:
-    name: Test Deploy
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: download
+      - name: checkout
         uses: actions/checkout@v4
-
-      - name: setup pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifacts
+      - name: download node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - name: download deps
+        run: npm ci
+      - name: Build project
+        run: |
+          cd vite-project
+          npm run build
+      - name: upload artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "."
+          path: "./dist"
 
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.event_name == "workflow_dispatch"
+    url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: deploy
         uses: actions/deploy-pages@v4
